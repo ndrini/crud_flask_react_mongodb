@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo, ObjectId
 from flask_cors import CORS
 
 import os
-from flask import send_from_directory
+from flask import render_template, send_from_directory
 
 app = Flask(__name__)
 # not existing yet database
@@ -14,6 +14,8 @@ CORS(app)
 
 db = mongo.db.users  # first call the mongodb collection will be created
 
+# app.add_url_rule('/favicon.ico',
+#                  redirect_to=url_for('static', filename='favicon.ico'))
 
 @app.route('/favicon.ico')
 def favicon():
@@ -24,9 +26,7 @@ def favicon():
 @app.route('/')
 def index():
     ''' html template page '''
-    return '''
-        # <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}>
-        <h1>Hey there! It's running!</h1>'''
+    return render_template('index.html')
 
 @app.route('/users', methods=['POST'])
 def createUser():

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import img_10_3 from '../images/10Possibilities/3/10.jpg';
+import img_10_3 from '../images/gandhi.jpg';
 
 
 const BookImage = () => 
