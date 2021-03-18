@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 # from flask_pymongo import PyMongo, ObjectId
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 from flask_cors import CORS
 
@@ -30,7 +31,7 @@ CORS(app)
 # app.add_url_rule('/favicon.ico',
 #                  redirect_to=url_for('static', filename='favicon.ico'))
 
-maxSevSelDelay = 100
+maxSevSelDelay = 3000
 client = MongoClient("mongodb://db_mongo:27017",
                      serverSelectionTimeoutMS=maxSevSelDelay)
 
