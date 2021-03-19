@@ -21,6 +21,19 @@ services:
     depends_on: 
       - db_mongo
 
+  nginx-react:
+    container_name: ngixreactapp
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    environment:
+      NODE_ENV: production
+      
+  # frontend:
+  #   build: 
+  #     context: ./frontend/
 
-
-# frontend: 
+  #   ports:
+  #     - 3000:3000

@@ -31,9 +31,9 @@ CORS(app)
 # app.add_url_rule('/favicon.ico',
 #                  redirect_to=url_for('static', filename='favicon.ico'))
 
-maxSevSelDelay = 3000
-client = MongoClient("mongodb://db_mongo:27017",
-                     serverSelectionTimeoutMS=maxSevSelDelay)
+# maxSevSelDelay = 3000
+client = MongoClient("mongodb://db_mongo:27017")
+                    #  serverSelectionTimeoutMS=maxSevSelDelay)
 
 db = client.users
 db_coll = db.usersColl
