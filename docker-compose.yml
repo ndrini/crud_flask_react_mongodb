@@ -22,7 +22,7 @@ services:
       - db_mongo
 
   nginx-react:
-    container_name: ngixreactapp
+#    container_name: ngixreactapp
     build:
       context: ./frontend/
       dockerfile: Dockerfile
